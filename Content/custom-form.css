@@ -1,0 +1,151 @@
+﻿/* Container של הטופס */
+.modern-form-container {
+    max-width: 480px;
+    margin: 60px auto;
+    padding: 40px 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* מרכז את כל התוכן */
+  
+}
+
+    /* כותרת */
+    .modern-form-container h2 {
+        text-align: center;
+        margin-bottom: 25px;
+        color: #1a1a1a;
+        font-weight: 700;
+    }
+
+/* תצוגת שגיאות פשוטה */
+.modern-form .field-validation-error {
+    color: #e74c3c; /* אדום */
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0 0 10px 0; /* רווח קטן מתחת לשגיאה */
+    padding: 0;
+    border: none;
+    background: none;
+    text-align: left; /* מתחיל משמאל */
+}
+
+    /* הסתרה אם אין תוכן */
+    .validation-summary ul:empty {
+        display: none;
+    }
+.validation-summary {
+    color: #e74c3c;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0 0 10px 0;
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+
+/* קבוצה של שדות */
+.modern-form .form-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* מרכז כל השדות בתוך הקונטיינר */
+    margin-bottom: 20px;
+}
+
+    /* תוויות */
+    .modern-form .form-group label {
+        margin-bottom: 6px;
+        font-weight: 500;
+        color: #333;
+        text-align: left; /* מתחילות משמאל */
+    }
+
+/* שדות קלט */
+.modern-form .form-input,
+.file-input {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 12px 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    background-color: #fafafa;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+    .modern-form .form-input:focus,
+    .file-input:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 8px rgba(0,123,255,0.2);
+        outline: none;
+        background-color: #fff;
+    }
+
+/* כפתור שמירה */
+.btn-submit {
+    width: 100%;
+    max-width: 420px;
+    display: block;
+    margin: 0 auto;
+    padding: 12px;
+    background-color: #007bff;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+    .btn-submit:hover {
+        background-color: #0056b3;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+/* קישור חזרה לרשימה */
+.back-link {
+    margin-top: 15px;
+    text-align: center;
+}
+
+    .back-link a {
+        color: #007bff;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+
+/* --- רספונסיביות למסכים קטנים --- */
+@media (max-width: 480px) {
+    .modern-form-container {
+        padding: 20px 15px;
+        margin: 30px 10px;
+    }
+
+    .modern-form .form-input,
+    .file-input,
+    .btn-submit {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    .validation-summary,
+    .modern-form .field-validation-error {
+        text-align: center; /* מתחילות משמאל */
+    }
+    .modern-form .form-group label {
+        text-align: left;
+    }
+}

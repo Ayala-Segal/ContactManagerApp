@@ -1,0 +1,67 @@
+﻿@model מטלת_בית.Models.Person
+
+@{
+    ViewBag.Title = Model.Id == 0 ? "Add Person" : "Edit Person";
+}
+
+@section Styles {
+    <link href="~/Content/custom-form.css" rel="stylesheet" />
+}
+
+<div class="modern-form-container">
+    <h2>@ViewBag.Title</h2>
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger validation-summary" })
+
+
+
+
+    @using (Html.BeginForm("Upsert", "People", FormMethod.Post, new { enctype = "multipart/form-data", @class = "modern-form" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(m => m.Id)
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.FullName)
+            @Html.TextBoxFor(m => m.FullName, new { @class = "form-input", placeholder = "Full Name" })
+            @Html.ValidationMessageFor(m => m.FullName, "", new { @class = "text-danger" })
+
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Phone)
+            @Html.TextBoxFor(m => m.Phone, new { @class = "form-input", placeholder = "Phone Number" })
+            @Html.ValidationMessageFor(m => m.Phone, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Email)
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-input", placeholder = "Email Address" })
+            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+
+        </div>
+
+        <div class="form-group">
+            <label>Profile Image</label>
+            <input type="file" name="imageFile" class="form-input file-input" />
+            @Html.ValidationMessage("ImageFile", "", new { @class = "text-danger" })
+            @if (!string.IsNullOrEmpty(Model.ImagePath))
+            {
+                <br />
+                <img src="@Url.Content(Model.ImagePath)" width="50" />
+            }
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Save" class="btn-submit" />
+        </div>
+    }
+
+    <div class="back-link">
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

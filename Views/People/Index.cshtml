@@ -1,0 +1,65 @@
+﻿@model IEnumerable<מטלת_בית.Models.Person>
+
+@{
+    ViewBag.Title = "List of people";
+}
+
+@section Styles {
+    <link href="~/Content/home.css?v=@DateTime.Now.Ticks" rel="stylesheet" />
+}
+
+<div class="home-container">
+    <h2>@ViewBag.Title</h2>
+
+    <!-- Buttons -->
+    <a class="btn-action export" href="@Url.Action("ExportPdf")">Export PDF</a>
+    <a class="btn-action add" href="@Url.Action("Upsert")">Add New Person</a>
+
+    <!-- Search by name with reset -->
+    @using (Html.BeginForm("Index", "People", FormMethod.Get))
+    {
+        <input type="text"
+               name="searchString"
+               placeholder="search by name"
+               value="@Request.QueryString["searchString"]"
+               class="search-input" />
+
+        <input type="submit" value="Search" class="btn-action search-btn" />
+
+        <a class="btn-action reset" href="@Url.Action("Index", "People")">Reset</a>
+    }
+
+    <!-- People table -->
+    <table>
+        <tr>
+            <th>Full Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Image</th>
+            <th>Actions</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.FullName</td>
+                <td>@item.Phone</td>
+                <td>@item.Email</td>
+                <td>
+                    @if (!string.IsNullOrEmpty(item.ImagePath))
+                    {
+                        <img src="@Url.Content(item.ImagePath)" width="50" />
+                    }
+                </td>
+
+                <td>
+                    <a class="btn-action edit" href="@Url.Action("Upsert", "People", new { id = item.Id })">Edit</a>
+                    <a class="btn-action delete" href="@Url.Action("Delete", "People", new { id = item.Id })"
+                       onclick="return confirm('Are you sure you want to delete this person?');">Delete</a>
+                </td>
+
+            </tr>
+        }
+
+    </table>
+</div>

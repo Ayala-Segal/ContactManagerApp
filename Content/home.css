@@ -1,0 +1,188 @@
+﻿/* Container מרכזי למסך הבית */
+.home-container {
+    max-width: 960px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+    /* כותרת */
+    .home-container h2 {
+        text-align: center;
+        margin-bottom: 25px;
+        color: #1a1a1a;
+        font-weight: 700;
+    }
+
+    /* Form לחיפוש */
+    .home-container form {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+.search-input {
+    width: 200px; /* רוחב השדה */
+    padding: 8px 12px; /* פנימה */
+    border-radius: 8px; /* קצוות עגולים */
+    border: 1px solid #ccc; /* גבול עדין */
+    font-size: 14px;
+    color: #333;
+    background-color: #fff; /* רקע לבן */
+    transition: all 0.3s ease;
+}
+
+    .search-input:focus {
+        outline: none;
+        border-color: #007bff; /* גבול כחול */
+        box-shadow: 0 0 8px rgba(0,123,255,0.2); /* מעט הצללה */
+        background-color: #fff; /* לוודא שהרקע נשאר לבן */
+    }
+/* שדה חיפוש */
+.search-input {
+    width: 200px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+    .search-input:focus {
+        outline: none;
+        border-color: #007bff;
+        box-shadow: 0 0 8px rgba(0,123,255,0.2);
+    }
+
+/* כפתורי פעולה אחידים */
+.btn-action {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.3s ease;
+    margin: 2px 0;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+}
+
+/* צבע בסיס לכל הכפתורים */
+.btn-action, .search-btn, .reset {
+    background-color: #17a2b8;
+}
+
+    /* Hover לכל הכפתורים */
+    .btn-action:hover, .search-btn:hover, .reset:hover {
+        background-color: #117a8b;
+    }
+
+    /* כפתורי ספציפיים */
+    .btn-action.edit {
+        background-color: #28a745;
+    }
+
+        .btn-action.edit:hover {
+            background-color: #218838;
+        }
+
+    .btn-action.delete {
+        background-color: #dc3545;
+    }
+
+        .btn-action.delete:hover {
+            background-color: #c82333;
+        }
+
+    .btn-action.export, .btn-action.add {
+        background-color: #17a2b8;
+    }
+
+        .btn-action.export:hover, .btn-action.add:hover {
+            background-color: #117a8b;
+        }
+
+/* לחצן חיפוש */
+.search-btn {
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    color: #fff;
+}
+
+/* Reset */
+.reset {
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+    table th, table td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: center;
+    }
+
+    table th {
+        background-color: #f4f4f4;
+        font-weight: 600;
+    }
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #e9ecef;
+}
+
+/* תמונות בטבלה */
+table img {
+    border-radius: 6px;
+    max-width: 50px;
+    max-height: 50px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .home-container {
+        padding: 20px;
+    }
+
+    table th, table td {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .btn-action, .search-btn, .reset {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+
+    input.search-input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}

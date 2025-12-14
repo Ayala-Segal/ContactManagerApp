@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> By Ayala Segal</title>
+    @Styles.Render("~/Content/css")
+    <link href="@Url.Content("~/Content/custom-form.css")?v=@DateTime.Now.Ticks" rel="stylesheet" />
+    @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("Styles", required: false)
+</head>
+<body>
+   
+    @RenderBody()
+    @RenderSection("Scripts", required: false)
+</body>
+
+</html>
