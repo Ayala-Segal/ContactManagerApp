@@ -8,6 +8,14 @@
 A simple web application for managing people.
 Allows adding new users, searching existing users, and exporting the list to PDF.
 
+## Technologies
+
+- C#  
+- ASP.NET MVC 4.8  
+- SQL Server (LocalDB or full server)  
+- HTML, CSS, JavaScript  
+- iTextSharp (for PDF export)
+
 ## Requirements
 
 * Windows with Visual Studio 2019/2022
