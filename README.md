@@ -1,56 +1,63 @@
-﻿# People Management Application
+# People Management Application
 
-**גרסה:** 1.0  
-**מחברת:** Ayala Segal
+**Version:** 1.0
+**Author:** Ayala Segal
 
----
+## Description
 
-## 1. דרישות הפעלה
-- Windows עם Visual Studio 2019/2022
-- SQL Server (LocalDB או Server רגיל) עם בסיס נתונים מוכן לפי הסקריפט המצורף `CreatePeopleTable.sql`
-- פרויקט ASP.NET MVC (Framework 4.8)
+A simple web application for managing people.
+Allows adding new users, searching existing users, and exporting the list to PDF.
 
----
+## Technologies
 
-## 2. יצירת הטבלה והנתונים הראשוניים
-- להריץ את הקובץ `CreatePeopleTable.sql` ב-SQL Server
-- הקובץ יוצר את הטבלה `People` ומוסיף 5 רשומות דוגמה
-- שלב זה מבטיח שהפרויקט ירוץ עם נתונים ראשוניים
----
+- C#  
+- ASP.NET MVC 4.8  
+- SQL Server (LocalDB or full server)  
+- HTML, CSS, JavaScript  
+- iTextSharp (for PDF export)
 
-## 3. הרצת הפרויקט
-1. פתחי את הקובץ `PeopleApp.sln` ב-Visual Studio
-2. ודאי שה-Database מחובר כראוי (בדקי את ה-Connection string ב-`Web.config`)
-3. לחצי על **F5** או **Start Debugging** → הפרויקט ירוץ בדפדפן דרך IIS Express
+## Requirements
 
----
+* Windows with Visual Studio 2019/2022
+* SQL Server (LocalDB or full server) with the `People` table (see `CreatePeopleTable.sql`)
+* ASP.NET MVC (Framework 4.8)
 
-## 4. שימוש באפליקציה
-- **הוספת משתמש חדש:**
-  1. לחצי על "Add New Person"
-  2. מלאי את השדות: Full Name, Phone, Email, Profile Image
-  3. לחצי **Save**
-  4. אם תכניסי אימייל לא חוקי, תופיע הודעת שגיאה
+## Setup
 
-- **חיפוש אנשים:**
-  1. הקלידי שם בשדה החיפוש
-  2. לחצי **Search**
-  3. כדי להציג את כל הרשימה מחדש, לחצי **Reset**
+1. Run the `CreatePeopleTable.sql` file in SQL Server.
 
-- **ייצוא PDF:**
-  1. לחצי על **Export PDF**
-  2. קובץ PDF נפתח בדפדפן (ניתן לשמור דרך הדפדפן או תוכנה לקריאת PDF)
+   * This creates the `People` table and adds 5 example records.
+2. Make sure the database connection is correct in `Web.config`.
 
----
+   * Example:
+     <connectionStrings>
+       <add name="PeopleDb" connectionString="Server=(localdb)\MSSQLLocalDB;Database=PeopleDb;Trusted_Connection=True;" providerName="System.Data.SqlClient" />
+     </connectionStrings>
+     
+3. Open `PeopleApp.sln` in Visual Studio.
+4. Press **F5** or click **Start Debugging** → The application will run in your browser via IIS Express.
 
-## 5. מיקום קובץ PDF
-- הקובץ נוצר על בסיס הרשימה הנוכחית של האנשים
-- מוצג בדפדפן מיד לאחר לחיצה על **Export PDF**
----
+## Using the Application
 
-## הסבר קצר
+* **Add a new user:**
 
-1. ודאו שחיבור למסד הנתונים מוגדר בפרויקט דרך ה-`Connection string` בקובץ `Web.config`.
-2. פתחו את הקובץ `PeopleApp.sln` ב-Visual Studio.
-3. הפעלת הפרויקט: לחצו על F5 → הפרויקט ירוץ בדפדפן דרך IIS Express.
-4. מיקום קובץ ה-PDF: הקובץ נוצר בעת לחיצה על כפתור **Export PDF** וניתן לצפות בו ישירות בדפדפן או לשמור למחשב.
+  1. Click **Add New Person**
+  2. Fill in Full Name, Phone, Email, and Profile Image
+  3. Click **Save**
+  4. Invalid emails will show an error message.
+
+* **Search people:**
+
+  1. Enter a name in the search field
+  2. Click **Search**
+  3. Click **Reset** to show the full list again
+
+* **Export PDF:**
+
+  1. Click **Export PDF**
+  2. The PDF file opens in your browser; you can save it from there.
+
+## PDF File
+
+* The PDF is generated based on the current list of people.
+* It opens automatically in the browser when exporting.

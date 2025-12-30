@@ -1,4 +1,3 @@
--- יצירת הטבלה People
 CREATE TABLE People (
     Id INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
     FullName NVARCHAR(100) NOT NULL,
@@ -7,7 +6,6 @@ CREATE TABLE People (
     ImagePath NVARCHAR(255) NULL
 );
 
--- הכנסת 5 רשומות לדוגמה
 INSERT INTO People (FullName, Phone, Email, ImagePath)
 VALUES 
 ('John Doe', '0501234567', 'john.doe@example.com', NULL),
