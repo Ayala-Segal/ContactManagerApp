@@ -8,9 +8,9 @@ using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
 using System.Xml.Linq;
-using מטלת_בית.Models;
+using ManagerPeople.Models;
 
-namespace מטלת_בית.Controllers
+namespace ManagerPeople.Controllers
 {
     public class PeopleController : Controller
     {

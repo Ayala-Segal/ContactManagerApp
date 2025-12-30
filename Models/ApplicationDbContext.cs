@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Data.Entity;
 
-namespace מטלת_בית.Models
+namespace ManagerPeople.Models
 {
     public class ApplicationDbContext : DbContext
     {

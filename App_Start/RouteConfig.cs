@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace מטלת_בית
+namespace ManagerPeople
 {
     public class RouteConfig
     {

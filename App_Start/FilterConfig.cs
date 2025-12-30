@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace מטלת_בית
+namespace ManagerPeople
 {
     public class FilterConfig
     {

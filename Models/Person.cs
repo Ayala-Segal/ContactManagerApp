@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace מטלת_בית.Models
+namespace ManagerPeople.Models
 {
 
     public class Person
